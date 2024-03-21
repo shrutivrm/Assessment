@@ -6,10 +6,12 @@ import PlacementCard from "../PlacementCard";
 import ReviewCard from "../ReviewCard";
 import RankingCard from "../RankingCard";
 import CollegeData from "../../CollegeData.json";
+import { useSelector } from "react-redux";
 
 const CollegeTable = () => {
   const data = CollegeData.collegeData;
-
+  const searchData = useSelector((state) => state.search);
+  // const filteredData = data.filter((item) => item.name.includes(searchData));
   return (
     <table className="table">
       <thead>
@@ -35,6 +37,7 @@ const CollegeTable = () => {
                     location={item.Location}
                     course={item.Course}
                     cutoff={item.Cutoff}
+                    featured={item.Featured}
                   />
                 }
               </td>

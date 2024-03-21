@@ -1,13 +1,28 @@
 import React from "react";
 import "./style.css";
 import CollegeData from "../../CollegeData.json";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchQuery } from "../.././redux/searchSlice";
 
 const SearchBar = () => {
+  const dispatch = useDispatch();
+  const searchQuery = useSelector((state) => state.search);
+
+  const handleInputChange = (e) => {
+    dispatch(setSearchQuery(e.target.value));
+  };
+
   return (
     <div className="main-container">
       <div className="bar-content bar-container">
         <h2>Found {CollegeData.collegeData.length} colleges</h2>
-        <input type="search" placeholder="Search here" className="input" />
+        <input
+          type="search"
+          placeholder="Search here"
+          className="input"
+          value={searchQuery}
+          onChange={handleInputChange}
+        />
       </div>
       <div className="bar-content bar-container">
         <h4>Sort By</h4>

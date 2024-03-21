@@ -1,9 +1,15 @@
 import React from "react";
 import "./style.css";
 
-const CollegeCard = ({ logo, name, location, course, cutoff }) => {
+const CollegeCard = ({ logo, name, location, course, cutoff, featured }) => {
   return (
     <div className="card-container">
+      {featured === "true" && (
+        <div className="featured-icon">
+          <div className="featured">Featured</div>
+        </div>
+      )}
+
       <div className="card-content">
         <img src={logo} alt="College Logo" className="clg-logo" />
         <div className="college-info">
