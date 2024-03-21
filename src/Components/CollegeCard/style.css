@@ -78,9 +78,16 @@
 }
 
 .featured-icon {
-  background-color: red;
-  height: 30px;
-  width: 6rem;
-  border-radius: 20px;
+  height: 0;
+  width: 70px;
+  border-top: 25px solid red;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
   color: white;
+  margin-top: -10px;
+}
+
+.featured {
+  margin-top: -25px;
+  font-size: 15px;
 }

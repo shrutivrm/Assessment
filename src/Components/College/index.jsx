@@ -6,39 +6,53 @@ import PlacementCard from "../PlacementCard";
 import ReviewCard from "../ReviewCard";
 import RankingCard from "../RankingCard";
 import CollegeData from "../../CollegeData.json";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setSearchQuery } from "../../redux/searchSlice";
 
 const CollegeTable = () => {
   const collegeDdata = CollegeData.collegeData;
-  const searchData = useSelector((state) => state.search);
-
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const searchQuery = useSelector((state) => state.search);
+  const [filteredData, setFilteredData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const pageSize = 10; // Number of items per page
+  const pageSize = 10;
 
   useEffect(() => {
+    setFilteredData([]);
+    setPage(1);
     fetchData();
-  }, [page]);
+  }, [searchQuery]);
 
-  const fetchData = () => {
+  const fetchData = async () => {
     setLoading(true);
-    // Simulated delay for data loading
+
     setTimeout(() => {
       const startIdx = (page - 1) * pageSize;
       const newData = collegeDdata.slice(startIdx, startIdx + pageSize);
-      setData((prevData) => [...prevData, ...newData]);
+      setFilteredData((prevData) => [...prevData, ...newData]);
       setLoading(false);
-    }, 1000); // Simulated delay
+    }, 1000);
   };
 
   const handleScroll = (event) => {
     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
-    if (scrollHeight - scrollTop === clientHeight && !loading) {
+    if (
+      scrollHeight - scrollTop === clientHeight &&
+      !loading &&
+      filteredData.length < collegeDdata.length
+    ) {
       setPage((prevPage) => prevPage + 1);
     }
   };
-  // const filteredData = data.filter((item) => item.name.includes(searchData));
+
+  const handleInputChange = (event) => {
+    dispatch(setSearchQuery(event.target.value));
+  };
+
+  const columnsToRender = Object.keys(collegeDdata[0] || {});
+  console.log("data", columnsToRender);
+
   return (
     <>
       {loading ? (
@@ -66,7 +80,7 @@ const CollegeTable = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item, index) => {
+            {filteredData.map((item, index) => {
               return (
                 <tr>
                   <td key={index}> # {item.Id}</td>
