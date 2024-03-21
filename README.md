@@ -1,3 +1,10 @@
+![image](https://github.com/shrutivrm/Assessment/assets/84138971/c8c6d25a-c708-4715-90a7-59a68223cf0a)
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
