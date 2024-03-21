@@ -1,0 +1,22 @@
+.placement-card-container {
+  text-align: left;
+  line-height: 5px;
+  width: 8rem;
+}
+
+.fees {
+  color: forestgreen;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.package {
+  font-size: 14px;
+}
+
+.placement {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+  text-decoration: none;
+}

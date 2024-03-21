@@ -1,0 +1,38 @@
+.table {
+  border-spacing: 0 15px;
+  width: 100%;
+  font-size: 20px;
+}
+
+th {
+  text-align: left;
+  padding: 20px 10px;
+  background: #669999;
+  width: 200px;
+  color: white;
+  font-weight: 500;
+}
+
+/* .college-card {
+    width: 38rem;
+    display: block;
+  } */
+
+.placement-card,
+.fees-card {
+  width: 15rem;
+}
+
+table,
+th,
+td {
+  padding: 10px;
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+@media (max-width: 1024px) {
+  .table {
+    font-size: 15px;
+  }
+}

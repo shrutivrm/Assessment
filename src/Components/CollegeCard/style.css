@@ -1,0 +1,78 @@
+.card-container {
+  width: 37rem;
+}
+
+.card-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+
+.clg-logo {
+  height: 2rem;
+  width: 2rem;
+}
+
+.college-info {
+  line-height: 5px;
+  text-align: left;
+}
+
+.clg-header {
+  margin: 10px;
+  font-size: 20px;
+  color: #33ccff;
+}
+
+.clg-location {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.clg-course-cutoff {
+  background-color: #ffeecc;
+  height: 3rem;
+  width: 50%;
+  margin-left: 10px;
+  padding: 0.2rem 1rem;
+  border-radius: 20px;
+}
+
+.clg-course {
+  color: red;
+  font-size: 12px;
+}
+
+.clg-cutoff {
+  font-size: 15px;
+}
+
+.card-links {
+  text-align: left;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 17px;
+  padding: 1rem;
+}
+
+.apply-link {
+  color: red;
+}
+
+.brocher-link {
+  color: forestgreen;
+}
+
+@media (max-width: 1024px) {
+  .clg-header {
+    font-size: 15px;
+  }
+  .clg-location {
+    font-size: 12px;
+  }
+  .card-container {
+    width: 28rem;
+  }
+}
