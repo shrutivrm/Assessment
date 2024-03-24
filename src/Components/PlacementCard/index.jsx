@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import { MdCompareArrows } from "react-icons/md";
 
 const PlacementCard = ({ averagePackage, highestPackage }) => {
   return (
@@ -9,7 +10,7 @@ const PlacementCard = ({ averagePackage, highestPackage }) => {
       <p className="fees">&#x20b9; {highestPackage}</p>
       <p className="package">Highest Package</p>
       <a href="" className="placement">
-        ⇉ Compare Placement
+        <MdCompareArrows /> Compare Placement
       </a>
     </div>
   );

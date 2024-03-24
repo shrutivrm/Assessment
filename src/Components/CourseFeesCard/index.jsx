@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { MdCompareArrows } from "react-icons/md";
 
 const CourseFeesCard = ({ courseFees }) => {
   return (
@@ -8,7 +9,7 @@ const CourseFeesCard = ({ courseFees }) => {
       <p className="course"> BE/B.Tech</p>
       <p className="clg-year">-1st year fees</p>
       <a href="" className="compare">
-        ⇉ Compare Fees
+        <MdCompareArrows /> Compare Fees
       </a>
     </div>
   );

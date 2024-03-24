@@ -1,5 +1,7 @@
 import React from "react";
 import "./style.css";
+import { FaDownload } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
 
 const CollegeCard = ({ logo, name, location, course, cutoff, featured }) => {
   return (
@@ -24,13 +26,15 @@ const CollegeCard = ({ logo, name, location, course, cutoff, featured }) => {
 
       <div className="card-links">
         <a href="" className="apply-link link">
-          → Apply Now
+          <FaArrowRight style={{ paddingRight: "5px" }} />
+          Apply Now
         </a>
         <a href="" className="brocher-link link">
+          <FaDownload style={{ paddingRight: "5px" }} />
           Download Brocher
         </a>
         <input type="checkbox" id="checkbox" />
-        <label htmlFor="checkbox">Add to Compare</label>
+        <label htmlFor="checkbox"> Add to Compare</label>
       </div>
     </div>
   );
